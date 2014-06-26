@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88CFC2"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bildButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="27dp"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="Bild" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bildButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/bildButton"
+        android:layout_marginRight="28dp"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="Profilbild" />
+
+    <EditText
+        android:id="@+id/persischesTextfeld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bildButton"
+        android:layout_alignRight="@+id/bildButton"
+        android:layout_centerVertical="true"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/persischesTextfeld"
+        android:layout_alignRight="@+id/persischesTextfeld"
+        android:layout_below="@+id/persischesTextfeld"
+        android:layout_marginTop="29dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignRight="@+id/button3"
+        android:layout_alignTop="@+id/editText2"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="M" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignRight="@+id/button1"
+        android:layout_alignTop="@+id/button3"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="L" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/persischesTextfeld"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignTop="@+id/persischesTextfeld"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="M" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignRight="@+id/button5"
+        android:layout_alignTop="@+id/button4"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="L" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:textColor="#000000"
+        android:background="@drawable/custom_button"
+        android:text="Wort hinzufügen" />
+
+</RelativeLayout>
