@@ -2,15 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#88CFC2"
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/bildbutton"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:background="@drawable/custom_button"
-        android:text="Button"
+        android:text="Bild"
         android:textColor="#000000" />
 
     <TextView
@@ -27,26 +28,21 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Large Text"
+            android:layout_weight="0.78"
+            android:text="Persisches festes Wort"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Button
-            android:id="@+id/Button01"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/custom_button"
-            android:text="M"
-            android:textColor="#000000" />
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_micro" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button2"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/custom_button"
-            android:text="L"
-            android:textColor="#000000" />
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_lautsprecher" />
     </LinearLayout>
 
     <TextView
@@ -64,28 +60,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10" >
+            android:ems="10"
+            android:hint="deutsche Übersetzung" >
 
             <requestFocus />
         </EditText>
 
-        <Button
+        <ImageButton
             android:id="@+id/button3"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/custom_button"
-            android:text="M"
-            android:textColor="#000000" />
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_micro" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button4"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/custom_button"
-            android:text="L"
-            android:textColor="#000000" />
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_lautsprecher" />
     </LinearLayout>
 
     <LinearLayout
@@ -97,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
-            android:text="Button"
+            android:text="+ Vokabelliste"
             android:textColor="#000000" />
 
         <Button
@@ -105,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_button"
-            android:text="Button"
+            android:text="Trainieren"
             android:textColor="#000000" />
     </LinearLayout>
 

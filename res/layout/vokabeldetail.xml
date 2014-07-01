@@ -1,142 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#88CFC2"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/deutschesTextfeld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/addToVokabellisteButton"
-        android:layout_alignRight="@+id/addToVokabellisteButton"
-        android:layout_below="@+id/persischesTextfeld"
-        android:layout_marginTop="37dp"
-        android:ems="10"
-        android:hint="Übersetzung" />
-
     <Button
-        android:id="@+id/addToVokabellisteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/trainierenButton"
-        android:layout_marginLeft="15dp"
-        android:height="60dp"
-        android:text="Zur Vokabelliste hinzufügen"
-        android:textColor="#000000"
+        android:id="@+id/bildbutton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
         android:background="@drawable/custom_button"
-        android:width="160dp" />
-
-    <Button
-        android:id="@+id/trainierenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/deutschesTextfeld"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="36dp"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="Trainieren" />
-
-    <Button
-        android:id="@+id/bildButton"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_alignLeft="@+id/persischesTextfeld"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/persischesTextfeld"
-        android:layout_marginTop="26dp"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="Bild" />
-
-    <TextView
-        android:id="@+id/persischesTextfeld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/deutschesTextfeld"
-        android:layout_alignRight="@+id/deutschesTextfeld"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:text="Blubs auf Persisch"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    <Button
-        android:id="@+id/profilBildButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/bildButton"
-        android:layout_alignRight="@+id/trainierenButton"
-        android:layout_alignTop="@+id/bildButton"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="ProfilBild" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/persischesTextfeld"
-        android:layout_alignLeft="@+id/profilBildButton"
-        android:layout_alignTop="@+id/persischesTextfeld"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="M" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignRight="@+id/profilBildButton"
-        android:layout_alignTop="@+id/button1"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="L" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/deutschesTextfeld"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_alignTop="@+id/deutschesTextfeld"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="M" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignRight="@+id/button2"
-        android:layout_alignTop="@+id/button3"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="L" />
+        android:text="Bild"
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/persischesTextfeld"
-        android:layout_alignLeft="@+id/persischesTextfeld"
-        android:text="Persisch"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="persisch" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.78"
+            android:text="Persisches festes Wort"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_micro" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_lautsprecher" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_alignLeft="@+id/deutschesTextfeld"
-        android:text="Deutsch"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="deutsch" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="deutsche Übersetzung" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_micro" />
+
+        <ImageButton
+            android:id="@+id/button4"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_lautsprecher" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:text="+ Vokabelliste"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_button"
+            android:text="Trainieren"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</LinearLayout>
