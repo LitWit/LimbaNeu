@@ -6,40 +6,46 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class WortHinzufuegenActivity extends Activity {
 
 	private static Button bildButton;
-	private static Button button1;
+	private static Button profilbildButton;
 	private static Button wortHinzufuegenButton;
-	private static Button button3;
-	private static Button button4;
-	private static Button button5;
-	private static Button button6;
-	private static TextView deutschesTextfeld;
+
+	private static ImageButton microPersischButton;
+	private static ImageButton lautsprecherPersischButton;
+	private static ImageButton microDeutschButton;
+	private static ImageButton lautsprecherDeutschButton;
+
 	private static TextView persischesTextfeld;
+	private static TextView deutschesTextfeld;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wort_hinzufuegen);
 
-		bildButton = (Button) findViewById(R.id.bildButton);
-		button1 = (Button) findViewById(R.id.button1);
-		wortHinzufuegenButton = (Button) findViewById(R.id.button2);
-		button3 = (Button) findViewById(R.id.button3);
-		button4 = (Button) findViewById(R.id.button4);
-		button5 = (Button) findViewById(R.id.button5);
-		button6 = (Button) findViewById(R.id.button6);
+		bildButton = (Button) findViewById(R.id.bildbutton);
+		profilbildButton = (Button) findViewById(R.id.profilbildButton);
+		wortHinzufuegenButton = (Button) findViewById(R.id.wortHinzufuegenButton);
+
+		microPersischButton = (ImageButton) findViewById(R.id.microPersischButton);
+		lautsprecherPersischButton = (ImageButton) findViewById(R.id.lautsprecherPersischButton);
+		microDeutschButton = (ImageButton) findViewById(R.id.microDeutschButton);
+		lautsprecherDeutschButton = (ImageButton) findViewById(R.id.lautsprecherDeutschButton);
+
 		persischesTextfeld = (TextView) findViewById(R.id.persischesTextfeld);
-		deutschesTextfeld = (TextView) findViewById(R.id.editText2);
+		deutschesTextfeld = (TextView) findViewById(R.id.deutschesTextfeld);
 
 		/**
 		 * Wort hinzufügen
 		 */
 		wortHinzufuegenButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				// TODO leere Wörter unterbinden (später, so schöner zu testen)
 				Vokabel vokabel = new Vokabel();
 				vokabel.setDeutscheVokabel(deutschesTextfeld.getText()
 						.toString());

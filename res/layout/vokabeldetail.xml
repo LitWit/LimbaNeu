@@ -15,7 +15,6 @@
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="persisch" />
@@ -25,7 +24,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/persischesTextfeld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.78"
@@ -33,20 +32,19 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ImageButton
-            android:id="@+id/button1"
+            android:id="@+id/microPersischButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_micro" />
 
         <ImageButton
-            android:id="@+id/button2"
+            android:id="@+id/lautsprecherPersischButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_lautsprecher" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="deutsch" />
@@ -56,7 +54,7 @@
         android:layout_height="wrap_content" >
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/deutschesTextfeld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -67,13 +65,13 @@
         </EditText>
 
         <ImageButton
-            android:id="@+id/button3"
+            android:id="@+id/microDeutschButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_micro" />
 
         <ImageButton
-            android:id="@+id/button4"
+            android:id="@+id/lautsprecherDeutschButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_lautsprecher" />
@@ -81,20 +79,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            android:id="@+id/vokabellisteHinzufuegenButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/custom_button"
             android:text="+ Vokabelliste"
             android:textColor="#000000" />
 
         <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
+            android:id="@+id/trainierenButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/custom_button"
             android:text="Trainieren"
             android:textColor="#000000" />

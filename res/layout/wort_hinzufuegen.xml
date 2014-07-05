@@ -1,111 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#88CFC2"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/bildButton"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="27dp"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="Bild" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/button1"
+        <Button
+            android:id="@+id/bildButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Bild"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/profilbildButton"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Profilbild"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/bildButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/bildButton"
-        android:layout_marginRight="28dp"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="Profilbild" />
+        android:text="persisch" />
 
-    <EditText
-        android:id="@+id/persischesTextfeld"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/persischesTextfeld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="persische Übersetzung" >
+
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/microPersischButton"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_micro" />
+
+        <ImageButton
+            android:id="@+id/lautsprecherPersischButton"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_lautsprecher" />
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/bildButton"
-        android:layout_alignRight="@+id/bildButton"
-        android:layout_centerVertical="true"
-        android:ems="10" />
+        android:text="deutsch" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/persischesTextfeld"
-        android:layout_alignRight="@+id/persischesTextfeld"
-        android:layout_below="@+id/persischesTextfeld"
-        android:layout_marginTop="29dp"
-        android:ems="10" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/deutschesTextfeld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="deutsches Wort" >
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_alignRight="@+id/button3"
-        android:layout_alignTop="@+id/editText2"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="M" />
+            <requestFocus />
+        </EditText>
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignRight="@+id/button1"
-        android:layout_alignTop="@+id/button3"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="L" />
+        <ImageButton
+            android:id="@+id/microDeutschButton"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_micro" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/persischesTextfeld"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignTop="@+id/persischesTextfeld"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="M" />
+        <ImageButton
+            android:id="@+id/lautsprecherDeutschButton"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_lautsprecher" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_alignLeft="@+id/button5"
-        android:layout_alignRight="@+id/button5"
-        android:layout_alignTop="@+id/button4"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="L" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical" >
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:textColor="#000000"
-        android:background="@drawable/custom_button"
-        android:text="Wort hinzufügen" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-</RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:visibility="invisible"
+            android:text="" />
+
+        <Button
+            android:id="@+id/wortHinzufuegenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Wort hinzufügen"
+            android:textColor="#000000" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:visibility="invisible"
+            android:text="" />
+
+    </LinearLayout>
+
+</LinearLayout>
