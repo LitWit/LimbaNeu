@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.limba.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,18 +22,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
-            android:name="com.example.limba.NeueWoerterActivity"
+            android:name=".NeueWoerterActivity"
             android:label="Neue Wörter" >
         </activity>
         <activity
-            android:name="com.example.limba.DetailActivity"
+            android:name=".DetailActivity"
             android:label="Detail" >
         </activity>
         <activity
-            android:name="com.example.limba.WortHinzufuegenActivity"
+            android:name=".WortHinzufuegenActivity"
             android:label="Wort hinzufügen" >
+        </activity>
+        <activity
+            android:name=".Trainieren"
+            android:label="@string/title_activity_trainieren" >
         </activity>
     </application>
 
