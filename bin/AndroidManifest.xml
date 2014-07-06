@@ -4,8 +4,11 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="16"
         android:targetSdkVersion="19" />
 
     <application
@@ -34,9 +37,13 @@
             android:name=".WortHinzufuegenActivity"
             android:label="Wort hinzufügen" >
         </activity>
-        <activity
+        <activity>
             android:name=".Trainieren"
-            android:label="@string/title_activity_trainieren" >
+            android:label="Trainieren" 
+		</activity>
+		<activity>
+            android:name="com.example.limba.AudioRecordTest"
+            android:label="Audio Record Test" >
         </activity>
     </application>
 
