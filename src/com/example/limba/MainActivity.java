@@ -77,9 +77,8 @@ public class MainActivity extends Activity {
 	}
 
 	protected void startBewertenActivity() {
-		// TODO
-		 Intent intent = new Intent(this, AudioRecordTest.class);
-		 this.startActivity(intent);
+		// Intent intent = new Intent(this, BewertenActivity.class);
+		// this.startActivity(intent);
 	}
 
 	protected void startWortHinzufuegenActivity() {

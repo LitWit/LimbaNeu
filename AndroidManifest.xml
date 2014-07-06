@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="8"
         android:targetSdkVersion="19" />
 
     <application
@@ -36,10 +36,6 @@
         <activity
             android:name="com.example.limba.WortHinzufuegenActivity"
             android:label="Wort hinzufügen" >
-        </activity>
-        <activity
-            android:name="com.example.limba.AudioRecordTest"
-            android:label="Audio Record Test" >
         </activity>
     </application>
 
