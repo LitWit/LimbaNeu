@@ -37,12 +37,8 @@
             android:name=".WortHinzufuegenActivity"
             android:label="Wort hinzufügen" >
         </activity>
-        <activity>
-            android:name=".Trainieren"
-            android:label="Trainieren" 
-		</activity>
-		<activity>
-            android:name="com.example.limba.AudioRecordTest"
+ 		<activity>
+            android:name=".AudioRecordTest"
             android:label="Audio Record Test" >
         </activity>
     </application>
