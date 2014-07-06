@@ -1,9 +1,14 @@
 package com.example.limba;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -24,6 +29,11 @@ public class DetailActivity extends Activity {
 
 	private static TextView persischesTextfeld;
 	private static EditText deutschesTextfeld;
+	
+	MediaPlayer audioPersisch = new MediaPlayer();
+	
+
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +68,34 @@ public class DetailActivity extends Activity {
 		((TextView) (findViewById(R.id.deutschesTextfeld))).setText(vokabel
 				.getNext().getDeutscheVokabel());
 
-		microPersischButton.setOnClickListener(new OnClickListener() {
+		// Audioaufnahme vorbereiten
+		
+
+		/*microPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-
-				MediaRecorder micro = new MediaRecorder();
-				micro.setAudioSource(MediaRecorder.AudioSource.MIC);
-				micro.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-				// FileOutputStream f =
-				// getResources().openRawResource(R.);
-
+				try {
+					recorder.prepare();
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				recorder.start(); // Recording is now started
 			}
 		});
+
+		lautsprecherPersischButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				recorder.stop();
+				// recorder.reset(); // You can reuse the object by going back
+				// to setAudioSource() step
+				// recorder.release(); // Now the object cannot be reused
+			}
+		});*/
 
 	}
 }
