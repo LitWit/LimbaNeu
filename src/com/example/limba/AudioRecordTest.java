@@ -2,7 +2,11 @@ package com.example.limba;
 
 import android.app.Activity;
 import android.widget.LinearLayout;
+<<<<<<< HEAD
 import android.os.Bundle;
+=======
+import android.os.Bundle; 
+>>>>>>> FETCH_HEAD
 import android.os.Environment;
 import android.view.ViewGroup;
 import android.widget.Button;
