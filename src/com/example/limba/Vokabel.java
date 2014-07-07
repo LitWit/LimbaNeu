@@ -5,6 +5,7 @@ import java.util.Date;
 public class Vokabel {
 	private String deutscheVokabel;
 	private String deutscheAussprache; // Pfad zur Datei
+	private String trainierteAussprache; // Pfad zur Datei
 	private String persischeVokabel;
 	private String persischeAussprache; // Pfad zur Datei
 	private Vokabel next;
@@ -15,6 +16,7 @@ public class Vokabel {
 	public Vokabel() {
 		deutscheVokabel = "";
 		deutscheAussprache = "";
+		trainierteAussprache ="";
 		persischeVokabel = "";
 		persischeAussprache = "";
 		next = null;
@@ -28,6 +30,10 @@ public class Vokabel {
 	}
 
 	public String getDeutscheAussprache() {
+		return deutscheAussprache;
+	}
+	
+	public String getTrainierteAussprache() {
 		return deutscheAussprache;
 	}
 
@@ -57,6 +63,10 @@ public class Vokabel {
 	}
 
 	public void setDeutscheAussprache(String deutscheAussprache) {
+		this.deutscheAussprache = deutscheAussprache;
+	}
+	
+	public void setTrainierteAussprache(String deutscheAussprache) {
 		this.deutscheAussprache = deutscheAussprache;
 	}
 

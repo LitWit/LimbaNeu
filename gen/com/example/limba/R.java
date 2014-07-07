@@ -1292,11 +1292,11 @@ containing a value of this type.
         public static final int ic_microblock=0x7f020060;
     }
     public static final class id {
-        public static final int BewertungAndererUser=0x7f05005b;
-        public static final int BewertungTitel=0x7f05005c;
-        public static final int BildButton=0x7f050054;
-        public static final int NeuerVersuchButton=0x7f05005d;
-        public static final int ZurueckButton=0x7f05005e;
+        public static final int BewertungAndererUser=0x7f05005a;
+        public static final int BewertungTitel=0x7f05005b;
+        public static final int BildButton=0x7f050053;
+        public static final int NeuerVersuchButton=0x7f05005c;
+        public static final int ZurueckButton=0x7f05005d;
         public static final int action_bar=0x7f05002d;
         public static final int action_bar_activity_content=0x7f050026;
         public static final int action_bar_container=0x7f05002c;
@@ -1308,15 +1308,15 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050027;
         public static final int action_menu_presenter=0x7f050028;
         public static final int action_mode_close_button=0x7f050035;
-        public static final int action_settings=0x7f050069;
+        public static final int action_settings=0x7f050068;
         public static final int activity_chooser_view_content=0x7f050036;
         public static final int alignBounds=0x7f050002;
         public static final int alignMargins=0x7f050003;
         public static final int always=0x7f05001d;
         public static final int beginning=0x7f050023;
-        public static final int bewerten_button=0x7f050050;
-        public static final int bildButton=0x7f050066;
-        public static final int bildbutton=0x7f05005f;
+        public static final int bewerten_button=0x7f05004f;
+        public static final int bildButton=0x7f050065;
+        public static final int bildbutton=0x7f05005e;
         public static final int bottom=0x7f050005;
         public static final int center=0x7f05000c;
         public static final int center_horizontal=0x7f05000a;
@@ -1325,9 +1325,8 @@ containing a value of this type.
         public static final int clip_horizontal=0x7f05000f;
         public static final int clip_vertical=0x7f05000e;
         public static final int collapseActionView=0x7f05001f;
-        public static final int container=0x7f05004d;
         public static final int default_activity_button=0x7f050039;
-        public static final int deutschesTextfeld=0x7f050061;
+        public static final int deutschesTextfeld=0x7f050060;
         public static final int dialog=0x7f050020;
         public static final int disableHome=0x7f05001a;
         public static final int dropdown=0x7f050021;
@@ -1344,25 +1343,25 @@ containing a value of this type.
         public static final int icon=0x7f05003b;
         public static final int ifRoom=0x7f05001c;
         public static final int image=0x7f050038;
-        public static final int lautsprecherDeutschButton=0x7f050063;
-        public static final int lautsprecherPersischButton=0x7f050056;
-        public static final int lautsprecherVersuschButton=0x7f05005a;
+        public static final int lautsprecherDeutschButton=0x7f050062;
+        public static final int lautsprecherPersischButton=0x7f050055;
+        public static final int lautsprecherVersuschButton=0x7f050059;
         public static final int left=0x7f050006;
-        public static final int linearLayout1=0x7f050053;
-        public static final int linearLayout2=0x7f050058;
+        public static final int linearLayout1=0x7f050052;
+        public static final int linearLayout2=0x7f050057;
         public static final int listMode=0x7f050013;
         public static final int list_item=0x7f05003a;
-        public static final int microDeutschButton=0x7f050062;
-        public static final int microPersischButton=0x7f050060;
-        public static final int microVersuchButton=0x7f050059;
+        public static final int microDeutschButton=0x7f050061;
+        public static final int microPersischButton=0x7f05005f;
+        public static final int microVersuchButton=0x7f050058;
         public static final int middle=0x7f050024;
-        public static final int neue_woerter_button=0x7f05004e;
-        public static final int neue_woerter_liste=0x7f050052;
+        public static final int neue_woerter_button=0x7f05004d;
+        public static final int neue_woerter_liste=0x7f050051;
         public static final int never=0x7f05001b;
         public static final int none=0x7f050022;
         public static final int normal=0x7f050012;
-        public static final int persischesTextfeld=0x7f050057;
-        public static final int profilbildButton=0x7f050067;
+        public static final int persischesTextfeld=0x7f050056;
+        public static final int profilbildButton=0x7f050066;
         public static final int progress_circular=0x7f050029;
         public static final int progress_horizontal=0x7f05002a;
         public static final int radio=0x7f050040;
@@ -1385,19 +1384,19 @@ containing a value of this type.
         public static final int start=0x7f050010;
         public static final int submit_area=0x7f05004a;
         public static final int tabMode=0x7f050014;
-        public static final int textView1=0x7f050055;
+        public static final int textView1=0x7f050054;
         public static final int title=0x7f05003c;
         public static final int top=0x7f050004;
         public static final int top_action_bar=0x7f050031;
-        public static final int trainierenButton=0x7f050065;
+        public static final int trainierenButton=0x7f050064;
         public static final int up=0x7f050032;
         public static final int useLogo=0x7f050015;
         public static final int vertical=0x7f050001;
-        public static final int vokabellisteHinzufuegenButton=0x7f050064;
-        public static final int vokabelliste_button=0x7f05004f;
+        public static final int vokabellisteHinzufuegenButton=0x7f050063;
+        public static final int vokabelliste_button=0x7f05004e;
         public static final int withText=0x7f05001e;
-        public static final int wortHinzufuegenButton=0x7f050068;
-        public static final int wort_hinzufuegen_button=0x7f050051;
+        public static final int wortHinzufuegenButton=0x7f050067;
+        public static final int wort_hinzufuegen_button=0x7f050050;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1449,13 +1448,12 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_main=0x7f030018;
-        public static final int mainboard=0x7f030019;
-        public static final int neue_woerter=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
-        public static final int trainieren=0x7f03001c;
-        public static final int vokabeldetail=0x7f03001d;
-        public static final int wort_hinzufuegen=0x7f03001e;
+        public static final int mainboard=0x7f030018;
+        public static final int neue_woerter=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int trainieren=0x7f03001b;
+        public static final int vokabeldetail=0x7f03001c;
+        public static final int wort_hinzufuegen=0x7f03001d;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
