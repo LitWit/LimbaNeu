@@ -37,7 +37,6 @@
             android:name=".WortHinzufuegenActivity"
             android:label="Wort hinzufügen" >
         </activity>
-<<<<<<< HEAD
         <activity
             android:name=".AudioRecordTest"
             android:label="Audio Record Test" >
@@ -46,8 +45,6 @@
             android:name=".Trainieren"
             android:label="@string/title_activity_trainieren" >
         </activity>
-=======
->>>>>>> FETCH_HEAD
     </application>
 
 </manifest>
