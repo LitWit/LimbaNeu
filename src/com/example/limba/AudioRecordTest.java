@@ -28,7 +28,7 @@ public class AudioRecordTest extends Activity {
 			// TODO
 		}
 		mediaRecorder.start();
-		return mediaRecorder;
+		return mediaRecorder; 
 	}
 
 	public static void stopRecording(MediaRecorder mediaRecorder) {

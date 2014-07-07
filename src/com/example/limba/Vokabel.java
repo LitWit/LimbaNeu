@@ -2,16 +2,14 @@ package com.example.limba;
 
 import java.util.Date;
 
-import android.graphics.Picture;
-
 public class Vokabel {
 	private String deutscheVokabel;
-	private Object deutscheAussprache; // TODO Object ersetzen
+	private String deutscheAussprache; // Pfad zur Datei
 	private String persischeVokabel;
-	private Object persischeAussprache; // TODO Object ersetzen
+	private String persischeAussprache; // Pfad zur Datei
 	private Vokabel next;
-	private Picture picture;
-	private Date date; // Erstellungsdatum
+	private String picture; // Pfad zur Datei
+	private Date date; // Erstellungsdatum 
 
 	// Konstruktor
 	public Vokabel() {
@@ -20,7 +18,7 @@ public class Vokabel {
 		persischeVokabel = "";
 		persischeAussprache = "";
 		next = null;
-		picture = null;
+		picture = "";
 		date = new Date();
 	}
 
@@ -29,7 +27,7 @@ public class Vokabel {
 		return deutscheVokabel;
 	}
 
-	public Object getDeutscheAussprache() {
+	public String getDeutscheAussprache() {
 		return deutscheAussprache;
 	}
 
@@ -37,7 +35,7 @@ public class Vokabel {
 		return persischeVokabel;
 	}
 
-	public Object getPersischeAussprache() {
+	public String getPersischeAussprache() {
 		return persischeAussprache;
 	}
 
@@ -45,7 +43,7 @@ public class Vokabel {
 		return next;
 	}
 
-	public Picture getPicture() {
+	public String getPicture() {
 		return picture;
 	}
 
@@ -74,7 +72,7 @@ public class Vokabel {
 		this.next = next;
 	}
 
-	public void setPicture(Picture picture) {
+	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 }

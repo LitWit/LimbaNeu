@@ -12,7 +12,7 @@ public class Vokabelliste {
 	}
 
 	public void add(Vokabel vokabel) {
-		vokabel.setNext(begin);
+		vokabel.setNext(begin); 
 		begin = vokabel;
 		size += 1;
 	}
