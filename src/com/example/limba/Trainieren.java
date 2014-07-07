@@ -2,6 +2,7 @@ package com.example.limba;
 
 import android.support.v7.app.ActionBarActivity;
 import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,18 +13,32 @@ import android.widget.ImageButton;
 public class Trainieren extends ActionBarActivity {
 
 	private static ImageButton lautsprecherPersischButton;
+	private static ImageButton microVersuchButton;
+	private static ImageButton lautsprecherVersuchButton;
+	
 	private MediaPlayer mediaPlayerPersisch = null;
-	boolean startPlayingPersisch = true;
-	String audioPathPersisch = "";
 
+	private MediaRecorder mediaRecorderVersuchPersisch = null;
+	private MediaPlayer mediaPlayerVersuchPersisch = null;
+
+	boolean startPlayingPersisch = true;
+	
+	boolean startPlayingVersuchPersisch = true;
+	boolean startRecordingVersuchPersisch = true;
+	
+	String audioPathPersisch = "";
+	String audioPathVersuchPersisch = "";
+	
+	private static Vokabel vokabel = new Vokabel();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.trainieren);
 
 		lautsprecherPersischButton = (ImageButton) findViewById(R.id.lautsprecherPersischButton);
-
-
+		microVersuchButton = (ImageButton) findViewById(R.id.microVersuchButton);
+		lautsprecherVersuchButton = (ImageButton) findViewById(R.id.lautsprecherVersuschButton);
 
 		lautsprecherPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -39,6 +54,41 @@ public class Trainieren extends ActionBarActivity {
 				startPlayingPersisch = !startPlayingPersisch;
 			}
 		});
+		
+		microVersuchButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startRecordingVersuchPersisch) {
+					audioPathVersuchPersisch = InternData.path + "/audioVersuch"
+							+ InternData.counter + ".3gp";
+					InternData.counter++;
+					mediaRecorderVersuchPersisch = AudioRecordTest.startRecording(
+							mediaRecorderVersuchPersisch, audioPathVersuchPersisch);
+					microVersuchButton.setImageResource(R.drawable.ic_microan);
+				} else {
+					AudioRecordTest.stopRecording(mediaRecorderVersuchPersisch);
+					vokabel.setDeutscheAussprache(audioPathVersuchPersisch);
+					microVersuchButton.setImageResource(R.drawable.ic_microaus);
+				}
+				startRecordingVersuchPersisch = !startRecordingVersuchPersisch;
+			}
+		});
+		
+		lautsprecherVersuchButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startPlayingVersuchPersisch) {
+					mediaPlayerVersuchPersisch = AudioRecordTest.startPlaying(
+							mediaPlayerVersuchPersisch, audioPathVersuchPersisch);
+					lautsprecherVersuchButton.setImageResource(R.drawable.ic_lautsprecheran);
+				} else {
+					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
+					lautsprecherVersuchButton.setImageResource(R.drawable.ic_lautsprecheraus);
+				}
+				startPlayingVersuchPersisch = !startPlayingVersuchPersisch;
+			}
+		});
+		
 	}
 
 	/*	@Override
