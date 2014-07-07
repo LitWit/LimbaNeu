@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 		wort_hinzufuegen_button = (Button) findViewById(R.id.wort_hinzufuegen_button);
 
 		/**
-		 * neue Wörter
+		 * neue Wï¿½rter
 		 */
 		neue_woerter_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 		});
 
 		/**
-		 * Wort hinzufügen
+		 * Wort hinzufï¿½gen
 		 */
 		wort_hinzufuegen_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -78,8 +78,9 @@ public class MainActivity extends Activity {
 
 	protected void startBewertenActivity() {
 		// TODO
-		 Intent intent = new Intent(this, AudioRecordTest.class);
-		 this.startActivity(intent);
+		//	 Intent intent = new Intent(this, AudioRecordTest.class);
+		Intent intent = new Intent(this, Trainieren.class);
+		this.startActivity(intent);
 	}
 
 	protected void startWortHinzufuegenActivity() {

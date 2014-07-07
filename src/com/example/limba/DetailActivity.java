@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.view.Menu;
 
 public class DetailActivity extends Activity {
 
@@ -29,11 +30,9 @@ public class DetailActivity extends Activity {
 
 	private static TextView persischesTextfeld;
 	private static EditText deutschesTextfeld;
-	
-	MediaPlayer audioPersisch = new MediaPlayer();
-	
 
-	
+	MediaPlayer audioPersisch = new MediaPlayer();
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +68,7 @@ public class DetailActivity extends Activity {
 				.getNext().getDeutscheVokabel());
 
 		// Audioaufnahme vorbereiten
-		
+
 
 		/*microPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -96,6 +95,22 @@ public class DetailActivity extends Activity {
 				// recorder.release(); // Now the object cannot be reused
 			}
 		});*/
+
+
+		/**
+		 * Trainieren
+		 */
+		trainierenButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				startTrainierenActivity();
+			}
+		});
+	}
+
+	protected void startTrainierenActivity() {
+		// TODO Auto-generated method stub
+		Intent intent2 = new Intent(this, Trainieren.class);
+		this.startActivity(intent2);
 
 	}
 }
