@@ -76,16 +76,16 @@ public class DetailActivity extends Activity {
 				.getNext().getDeutscheVokabel());
 
 		// Audioaufnahme vorbereiten
-		mediaRecorderPersisch = new MediaRecorder();
+		//mediaRecorderPersisch = new MediaRecorder();
 
 		microPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (startRecordingPersisch) {
-					mediaRecorderPersisch = startRecording(
+					mediaRecorderPersisch = AudioRecordTest.startRecording(
 							mediaRecorderPersisch, audioPathPersisch);
 				} else {
-					stopRecording(mediaRecorderPersisch);
+					AudioRecordTest.stopRecording(mediaRecorderPersisch);
 				}
 				startRecordingPersisch = !startRecordingPersisch;
 			}
@@ -95,10 +95,10 @@ public class DetailActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (startPlayingPersisch) {
-					mediaPlayerPersisch = startPlaying(mediaPlayerPersisch,
+					mediaPlayerPersisch = AudioRecordTest.startPlaying(mediaPlayerPersisch,
 							audioPathPersisch);
 				} else {
-					stopPlaying(mediaPlayerPersisch);
+					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
 				}
 				startPlayingPersisch = !startPlayingPersisch;
 			}
@@ -119,51 +119,6 @@ public class DetailActivity extends Activity {
 		// TODO Auto-generated method stub
 		Intent intent2 = new Intent(this, Trainieren.class);
 		this.startActivity(intent2);
-	}
-
-	private MediaRecorder startRecording(MediaRecorder mediaRecorder,
-			String path) {
-		mediaRecorder = new MediaRecorder();
-		mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-		mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-		mediaRecorder.setOutputFile(path);
-		mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-		try {
-			mediaRecorder.prepare();
-		} catch (IOException e) {
-			// TODO
-		}
-		mediaRecorder.start();
-		return mediaRecorder;
-	}
-
-	private void stopRecording(MediaRecorder mediaRecorder) {
-		try {
-			mediaRecorder.stop();
-			mediaRecorder.release();
-		} catch (IllegalStateException e) {
-			// TOdo
-		}
-		mediaRecorder = null;
-	}
-
-	private MediaPlayer startPlaying(MediaPlayer mediaPlayer, String path) {
-		mediaPlayer = new MediaPlayer();
-		try {
-			mediaPlayer.setDataSource(path);
-			mediaPlayer.prepare();
-			mediaPlayer.start();
-		} catch (IOException e) {
-			// TODO
-		} catch (Exception e2) {
-			// TODO: handle exception
-		}
-		return mediaPlayer;
-	}
-
-	private void stopPlaying(MediaPlayer mediaPlayer) {
-		mediaPlayer.release();
-		mediaPlayer = null;
 	}
 
 }
