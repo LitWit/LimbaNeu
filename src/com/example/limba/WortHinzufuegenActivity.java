@@ -79,11 +79,11 @@ public class WortHinzufuegenActivity extends Activity {
 					InternData.counter++;
 					mediaRecorderPersisch = AudioRecordTest.startRecording(
 							mediaRecorderPersisch, audioPathPersisch);
-					microPersischButton.setBackgroundResource(R.drawable.ic_microan);
+					microPersischButton.setImageResource(R.drawable.ic_microan);
 				} else {
 					AudioRecordTest.stopRecording(mediaRecorderPersisch);
 					vokabel.setPersischeAussprache(audioPathPersisch);
-					microPersischButton.setBackgroundResource(R.drawable.ic_microaus);
+					microPersischButton.setImageResource(R.drawable.ic_microaus);
 				}
 				startRecordingPersisch = !startRecordingPersisch;
 			}
@@ -95,10 +95,10 @@ public class WortHinzufuegenActivity extends Activity {
 				if (startPlayingPersisch) {
 					mediaPlayerPersisch = AudioRecordTest.startPlaying(
 							mediaPlayerPersisch, audioPathPersisch);
-					lautsprecherPersischButton.setBackgroundResource(R.drawable.ic_lautsprecheran);
+					lautsprecherPersischButton.setImageResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
-					lautsprecherPersischButton.setBackgroundResource(R.drawable.ic_lautsprecheraus);
+					lautsprecherPersischButton.setImageResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingPersisch = !startPlayingPersisch;
 			}
@@ -113,11 +113,11 @@ public class WortHinzufuegenActivity extends Activity {
 					InternData.counter++;
 					mediaRecorderDeutsch = AudioRecordTest.startRecording(
 							mediaRecorderDeutsch, audioPathDeutsch);
-					microDeutschButton.setBackgroundResource(R.drawable.ic_microan);
+					microDeutschButton.setImageResource(R.drawable.ic_microan);
 				} else {
 					AudioRecordTest.stopRecording(mediaRecorderDeutsch);
 					vokabel.setDeutscheAussprache(audioPathDeutsch);
-					microDeutschButton.setBackgroundResource(R.drawable.ic_microaus);
+					microDeutschButton.setImageResource(R.drawable.ic_microaus);
 				}
 				startRecordingDeutsch = !startRecordingDeutsch;
 			}
@@ -129,10 +129,10 @@ public class WortHinzufuegenActivity extends Activity {
 				if (startPlayingDeutsch) {
 					mediaPlayerDeutsch = AudioRecordTest.startPlaying(
 							mediaPlayerDeutsch, audioPathDeutsch);
-					lautsprecherDeutschButton.setBackgroundResource(R.drawable.ic_lautsprecheran);
+					lautsprecherDeutschButton.setImageResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerDeutsch);
-					lautsprecherDeutschButton.setBackgroundResource(R.drawable.ic_lautsprecheraus);
+					lautsprecherDeutschButton.setImageResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingDeutsch = !startPlayingDeutsch;
 			}

@@ -1,13 +1,6 @@
 package com.example.limba;
 
 import android.app.Activity;
-import android.widget.LinearLayout;
-import android.os.Bundle;
-import android.os.Environment;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.view.View;
-import android.content.Context;
 import android.media.MediaRecorder;
 import android.media.MediaPlayer;
 
