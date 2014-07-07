@@ -74,10 +74,27 @@ public class DetailActivity extends Activity {
 				if (startPlayingPersisch) {
 					mediaPlayerPersisch = AudioRecordTest.startPlaying(
 							mediaPlayerPersisch, audioPathPersisch);
+					lautsprecherPersischButton.setBackgroundResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
+					lautsprecherPersischButton.setBackgroundResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingPersisch = !startPlayingPersisch;
+			}
+		});
+		
+		lautsprecherDeutschButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startPlayingDeutsch) {
+					mediaPlayerDeutsch = AudioRecordTest.startPlaying(
+							mediaPlayerDeutsch, audioPathDeutsch);
+					lautsprecherDeutschButton.setBackgroundResource(R.drawable.ic_lautsprecheran);
+				} else {
+					AudioRecordTest.stopPlaying(mediaPlayerDeutsch);
+					lautsprecherDeutschButton.setBackgroundResource(R.drawable.ic_lautsprecheraus);
+				}
+				startPlayingDeutsch = !startPlayingDeutsch;
 			}
 		});
 

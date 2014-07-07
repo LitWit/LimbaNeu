@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -80,9 +79,11 @@ public class WortHinzufuegenActivity extends Activity {
 					InternData.counter++;
 					mediaRecorderPersisch = AudioRecordTest.startRecording(
 							mediaRecorderPersisch, audioPathPersisch);
+					microPersischButton.setBackgroundResource(R.drawable.ic_microan);
 				} else {
 					AudioRecordTest.stopRecording(mediaRecorderPersisch);
 					vokabel.setPersischeAussprache(audioPathPersisch);
+					microPersischButton.setBackgroundResource(R.drawable.ic_microaus);
 				}
 				startRecordingPersisch = !startRecordingPersisch;
 			}
@@ -94,10 +95,46 @@ public class WortHinzufuegenActivity extends Activity {
 				if (startPlayingPersisch) {
 					mediaPlayerPersisch = AudioRecordTest.startPlaying(
 							mediaPlayerPersisch, audioPathPersisch);
+					lautsprecherPersischButton.setBackgroundResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
+					lautsprecherPersischButton.setBackgroundResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingPersisch = !startPlayingPersisch;
+			}
+		});
+		
+		microDeutschButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startRecordingDeutsch) {
+					audioPathDeutsch = InternData.path + "/audio"
+							+ InternData.counter + ".3gp";
+					InternData.counter++;
+					mediaRecorderDeutsch = AudioRecordTest.startRecording(
+							mediaRecorderDeutsch, audioPathDeutsch);
+					microDeutschButton.setBackgroundResource(R.drawable.ic_microan);
+				} else {
+					AudioRecordTest.stopRecording(mediaRecorderDeutsch);
+					vokabel.setDeutscheAussprache(audioPathDeutsch);
+					microDeutschButton.setBackgroundResource(R.drawable.ic_microaus);
+				}
+				startRecordingDeutsch = !startRecordingDeutsch;
+			}
+		});
+
+		lautsprecherDeutschButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startPlayingDeutsch) {
+					mediaPlayerDeutsch = AudioRecordTest.startPlaying(
+							mediaPlayerDeutsch, audioPathDeutsch);
+					lautsprecherDeutschButton.setBackgroundResource(R.drawable.ic_lautsprecheran);
+				} else {
+					AudioRecordTest.stopPlaying(mediaPlayerDeutsch);
+					lautsprecherDeutschButton.setBackgroundResource(R.drawable.ic_lautsprecheraus);
+				}
+				startPlayingDeutsch = !startPlayingDeutsch;
 			}
 		});
 	}

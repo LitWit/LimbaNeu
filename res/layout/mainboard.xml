@@ -1,71 +1,66 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#88CFC2"
-    tools:context=".MainActivity" >
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/Limba"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Limba"
-        android:textColor="#FF0000"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical" >
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/neue_woerter_button"
-        style="@drawable/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Limba"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/custom_button"
-        android:text="Neue Wörter"
-        android:textColor="#000000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/vokabelliste_button"
-        style="@drawable/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/neue_woerter_button"
-        android:layout_alignBottom="@+id/neue_woerter_button"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/custom_button"
-        android:text="Vokabelliste"
-        android:textColor="#000000" />
+        <Button
+            android:id="@+id/neue_woerter_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Neue Wörter"
+            android:textColor="#000000" />
 
-    <Button
-        android:id="@+id/bewerten_button"
-        style="@drawable/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/neue_woerter_button"
-        android:layout_below="@+id/neue_woerter_button"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/custom_button"
-        android:text="Bewerten"
-        android:textColor="#000000" />
+        <Button
+            android:id="@+id/vokabelliste_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Vokabelliste"
+            android:textColor="#000000" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/wort_hinzufuegen_button"
-        style="@drawable/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/bewerten_button"
-        android:layout_alignBottom="@+id/bewerten_button"
-        android:layout_alignRight="@+id/vokabelliste_button"
-        android:background="@drawable/custom_button"
-        android:text="Wort hinzufügen"
-        android:textColor="#000000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical" >
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/bewerten_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Bewerten"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/wort_hinzufuegen_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Wort hinzufügen"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</LinearLayout>

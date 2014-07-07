@@ -54,13 +54,13 @@
             android:id="@+id/microPersischButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:src="@drawable/ic_micro" />
+            android:src="@drawable/ic_microaus" />
 
         <ImageButton
             android:id="@+id/lautsprecherPersischButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:src="@drawable/ic_lautsprecher" />
+            android:src="@drawable/ic_lautsprecheraus" />
     </LinearLayout>
 
     <TextView
@@ -87,13 +87,13 @@
             android:id="@+id/microDeutschButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:src="@drawable/ic_micro" />
+            android:src="@drawable/ic_microaus" />
 
         <ImageButton
             android:id="@+id/lautsprecherDeutschButton"
             android:layout_width="35dp"
             android:layout_height="45dp"
-            android:src="@drawable/ic_lautsprecher" />
+            android:src="@drawable/ic_lautsprecheraus" />
     </LinearLayout>
 
     <LinearLayout
