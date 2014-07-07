@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -22,17 +21,32 @@ public class DetailActivity extends Activity {
 	private static Button bildButton;
 	private static Button vokabellisteHinzufuegenButton;
 	private static Button trainierenButton;
-
 	private static ImageButton microPersischButton;
 	private static ImageButton lautsprecherPersischButton;
 	private static ImageButton microDeutschButton;
 	private static ImageButton lautsprecherDeutschButton;
-
 	private static TextView persischesTextfeld;
 	private static EditText deutschesTextfeld;
+<<<<<<< HEAD
 
 	MediaPlayer audioPersisch = new MediaPlayer();
 
+=======
+
+	// Audio
+	private MediaRecorder mediaRecorderPersisch = null;
+	private MediaRecorder mediaRecorderDeutsch = null;
+	private MediaPlayer mediaPlayerPersisch = null;
+	private MediaPlayer mediaPlayerDeutsch = null;
+	boolean startRecordingPersisch = true;
+	boolean startRecordingDeutsch = true;
+	boolean startPlayingPersisch = true;
+	boolean startPlayingDeutsch = true;
+
+	String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+	String audioPathPersisch = path + "/LimbaPersisch.3gp";
+	String audioPathDeutsch = path + "/LimbaDeutsch.3gp";
+>>>>>>> FETCH_HEAD
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +56,11 @@ public class DetailActivity extends Activity {
 		bildButton = (Button) findViewById(R.id.bildButton);
 		vokabellisteHinzufuegenButton = (Button) findViewById(R.id.vokabellisteHinzufuegenButton);
 		trainierenButton = (Button) findViewById(R.id.trainierenButton);
-
 		microPersischButton = (ImageButton) findViewById(R.id.microPersischButton);
 		lautsprecherPersischButton = (ImageButton) findViewById(R.id.lautsprecherPersischButton);
 		microDeutschButton = (ImageButton) findViewById(R.id.microDeutschButton);
 		lautsprecherDeutschButton = (ImageButton) findViewById(R.id.lautsprecherDeutschButton);
-
 		persischesTextfeld = (TextView) findViewById(R.id.persischesTextfeld);
-
 		deutschesTextfeld = (EditText) findViewById(R.id.deutschesTextfeld);
 
 		Intent intent = getIntent();
@@ -68,34 +79,40 @@ public class DetailActivity extends Activity {
 				.getNext().getDeutscheVokabel());
 
 		// Audioaufnahme vorbereiten
+<<<<<<< HEAD
 
+=======
+		mediaRecorderPersisch = new MediaRecorder();
+>>>>>>> FETCH_HEAD
 
-		/*microPersischButton.setOnClickListener(new OnClickListener() {
+		microPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					recorder.prepare();
-				} catch (IllegalStateException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				if (startRecordingPersisch) {
+					mediaRecorderPersisch = startRecording(
+							mediaRecorderPersisch, audioPathPersisch);
+				} else {
+					stopRecording(mediaRecorderPersisch);
 				}
-				recorder.start(); // Recording is now started
+				startRecordingPersisch = !startRecordingPersisch;
 			}
 		});
 
 		lautsprecherPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				recorder.stop();
-				// recorder.reset(); // You can reuse the object by going back
-				// to setAudioSource() step
-				// recorder.release(); // Now the object cannot be reused
+				if (startPlayingPersisch) {
+					mediaPlayerPersisch = startPlaying(mediaPlayerPersisch,
+							audioPathPersisch);
+				} else {
+					stopPlaying(mediaPlayerPersisch);
+				}
+				startPlayingPersisch = !startPlayingPersisch;
 			}
-		});*/
+		});
+	}
 
+<<<<<<< HEAD
 
 		/**
 		 * Trainieren
@@ -112,5 +129,51 @@ public class DetailActivity extends Activity {
 		Intent intent2 = new Intent(this, Trainieren.class);
 		this.startActivity(intent2);
 
+=======
+	private MediaRecorder startRecording(MediaRecorder mediaRecorder,
+			String path) {
+		mediaRecorder = new MediaRecorder();
+		mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+		mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+		mediaRecorder.setOutputFile(path);
+		mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+		try {
+			mediaRecorder.prepare();
+		} catch (IOException e) {
+			// TODO
+		}
+		mediaRecorder.start();
+		return mediaRecorder;
+>>>>>>> FETCH_HEAD
 	}
+
+	private void stopRecording(MediaRecorder mediaRecorder) {
+		try {
+			mediaRecorder.stop();
+			mediaRecorder.release();
+		} catch (IllegalStateException e) {
+			// TOdo
+		}
+		mediaRecorder = null;
+	}
+
+	private MediaPlayer startPlaying(MediaPlayer mediaPlayer, String path) {
+		mediaPlayer = new MediaPlayer();
+		try {
+			mediaPlayer.setDataSource(path);
+			mediaPlayer.prepare();
+			mediaPlayer.start();
+		} catch (IOException e) {
+			// TODO
+		} catch (Exception e2) {
+			// TODO: handle exception
+		}
+		return mediaPlayer;
+	}
+
+	private void stopPlaying(MediaPlayer mediaPlayer) {
+		mediaPlayer.release();
+		mediaPlayer = null;
+	}
+
 }

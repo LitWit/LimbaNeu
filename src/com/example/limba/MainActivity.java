@@ -77,10 +77,15 @@ public class MainActivity extends Activity {
 	}
 
 	protected void startBewertenActivity() {
+<<<<<<< HEAD
 		// TODO
 		//	 Intent intent = new Intent(this, AudioRecordTest.class);
 		Intent intent = new Intent(this, Trainieren.class);
 		this.startActivity(intent);
+=======
+		// Intent intent = new Intent(this, BewertenActivity.class);
+		// this.startActivity(intent);
+>>>>>>> FETCH_HEAD
 	}
 
 	protected void startWortHinzufuegenActivity() {
