@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -27,11 +28,8 @@ public class DetailActivity extends Activity {
 	private static ImageButton lautsprecherDeutschButton;
 	private static TextView persischesTextfeld;
 	private static EditText deutschesTextfeld;
-<<<<<<< HEAD
 
 	MediaPlayer audioPersisch = new MediaPlayer();
-
-=======
 
 	// Audio
 	private MediaRecorder mediaRecorderPersisch = null;
@@ -46,7 +44,6 @@ public class DetailActivity extends Activity {
 	String path = Environment.getExternalStorageDirectory().getAbsolutePath();
 	String audioPathPersisch = path + "/LimbaPersisch.3gp";
 	String audioPathDeutsch = path + "/LimbaDeutsch.3gp";
->>>>>>> FETCH_HEAD
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,11 +76,7 @@ public class DetailActivity extends Activity {
 				.getNext().getDeutscheVokabel());
 
 		// Audioaufnahme vorbereiten
-<<<<<<< HEAD
-
-=======
 		mediaRecorderPersisch = new MediaRecorder();
->>>>>>> FETCH_HEAD
 
 		microPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -110,9 +103,7 @@ public class DetailActivity extends Activity {
 				startPlayingPersisch = !startPlayingPersisch;
 			}
 		});
-	}
 
-<<<<<<< HEAD
 
 		/**
 		 * Trainieren
@@ -128,8 +119,8 @@ public class DetailActivity extends Activity {
 		// TODO Auto-generated method stub
 		Intent intent2 = new Intent(this, Trainieren.class);
 		this.startActivity(intent2);
+	}
 
-=======
 	private MediaRecorder startRecording(MediaRecorder mediaRecorder,
 			String path) {
 		mediaRecorder = new MediaRecorder();
@@ -144,7 +135,6 @@ public class DetailActivity extends Activity {
 		}
 		mediaRecorder.start();
 		return mediaRecorder;
->>>>>>> FETCH_HEAD
 	}
 
 	private void stopRecording(MediaRecorder mediaRecorder) {
