@@ -1,10 +1,11 @@
 package com.example.limba;
 
+import java.util.LinkedList;
+
 import android.os.Environment;
 
 public class InternData {
-	public static Vokabelliste liste = new Vokabelliste();
-	 // hier Glaucia
+	public static LinkedList<Vokabel> liste = new LinkedList<Vokabel>();
 	public static Vokabel vokabel = new Vokabel();
 	//counter für die Audiopaths 
 	public static int counter = 0;

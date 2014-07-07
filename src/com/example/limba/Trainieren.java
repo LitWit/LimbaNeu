@@ -4,29 +4,30 @@ import android.support.v7.app.ActionBarActivity;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class Trainieren extends ActionBarActivity {
 
 	private static ImageButton lautsprecherPersischButton;
 	private static ImageButton microVersuchButton;
 	private static ImageButton lautsprecherVersuchButton;
+	private static TextView textBewertung1;
+	private static TextView textBewertung2;
+	private static Button neuerVersuchButton;
 	
 	private MediaPlayer mediaPlayerPersisch = null;
-
 	private MediaRecorder mediaRecorderVersuchPersisch = null;
 	private MediaPlayer mediaPlayerVersuchPersisch = null;
 
 	boolean startPlayingPersisch = true;
-	
 	boolean startPlayingVersuchPersisch = true;
 	boolean startRecordingVersuchPersisch = true;
 	
-	String audioPathPersisch = "";
+	String audioPathPersisch = InternData.vokabel.getPersischeAussprache();
 	String audioPathVersuchPersisch = "";
 	
 	private static Vokabel vokabel = new Vokabel();
@@ -39,7 +40,11 @@ public class Trainieren extends ActionBarActivity {
 		lautsprecherPersischButton = (ImageButton) findViewById(R.id.lautsprecherPersischButton);
 		microVersuchButton = (ImageButton) findViewById(R.id.microVersuchButton);
 		lautsprecherVersuchButton = (ImageButton) findViewById(R.id.lautsprecherVersuschButton);
+		textBewertung1 = (TextView) findViewById(R.id.textBewertung1);
+		textBewertung2 = (TextView) findViewById(R.id.textBewertung2);
+		neuerVersuchButton = (Button) findViewById(R.id.neuerVersuchButton);
 
+		
 		lautsprecherPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -69,6 +74,10 @@ public class Trainieren extends ActionBarActivity {
 					AudioRecordTest.stopRecording(mediaRecorderVersuchPersisch);
 					vokabel.setDeutscheAussprache(audioPathVersuchPersisch);
 					microVersuchButton.setImageResource(R.drawable.ic_microaus);
+					
+					textBewertung1.setVisibility(View.VISIBLE);
+					textBewertung2.setVisibility(View.VISIBLE);
+					neuerVersuchButton.setVisibility(View.VISIBLE);
 				}
 				startRecordingVersuchPersisch = !startRecordingVersuchPersisch;
 			}
@@ -90,24 +99,4 @@ public class Trainieren extends ActionBarActivity {
 		});
 		
 	}
-
-	/*	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.trainieren, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}	
-	 */
 }

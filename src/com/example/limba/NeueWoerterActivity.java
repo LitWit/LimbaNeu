@@ -29,12 +29,9 @@ public class NeueWoerterActivity extends Activity {
 		neue_woerter_liste = (ListView) findViewById(R.id.neue_woerter_liste);
 
 		List valueList = new ArrayList<TextView>();
-		Vokabel nextVokabel = new Vokabel();
-		nextVokabel.setNext(InternData.liste.getBegin());
-
-		while (nextVokabel.getNext() != null) {
-			valueList.add(nextVokabel.getNext().getPersischeVokabel());
-			nextVokabel.setNext(nextVokabel.getNext().getNext());
+		
+		for (Vokabel vokabel : InternData.liste) {
+			valueList.add(vokabel.getPersischeVokabel());
 		}
 
 		ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),

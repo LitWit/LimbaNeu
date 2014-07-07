@@ -23,9 +23,10 @@ public class DetailActivity extends Activity {
 	private static TextView persischesTextfeld;
 	private static EditText deutschesTextfeld;
 
+	Vokabel vokabel = new Vokabel();
+
 	// Audio
-	private MediaRecorder mediaRecorderPersisch = null;
-	private MediaRecorder mediaRecorderDeutsch = null; 
+	private MediaRecorder mediaRecorderDeutsch = null;
 	private MediaPlayer mediaPlayerPersisch = null;
 	private MediaPlayer mediaPlayerDeutsch = null;
 	boolean startRecordingPersisch = true;
@@ -54,19 +55,34 @@ public class DetailActivity extends Activity {
 
 		int position = (int) intent.getIntExtra("position", 0);
 
-		Vokabel vokabel = new Vokabel();
-		vokabel.setNext(InternData.liste.getBegin());
-		for (int i = 0; i < position; i++) {
-			vokabel.setNext(vokabel.getNext().getNext());
-		}
-		InternData.vokabel = vokabel.getNext();
-		audioPathPersisch = vokabel.getNext().getPersischeAussprache();
-		audioPathDeutsch = vokabel.getNext().getDeutscheAussprache();
+		vokabel = InternData.liste.get(position);
+		InternData.vokabel = vokabel;
+		audioPathPersisch = vokabel.getPersischeAussprache();
+		audioPathDeutsch = vokabel.getDeutscheAussprache();
 
 		((TextView) (findViewById(R.id.persischesTextfeld))).setText(vokabel
-				.getNext().getPersischeVokabel());
+				.getPersischeVokabel());
 		((TextView) (findViewById(R.id.deutschesTextfeld))).setText(vokabel
-				.getNext().getDeutscheVokabel());
+				.getDeutscheVokabel());
+
+		microDeutschButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startRecordingDeutsch) {
+					audioPathDeutsch = InternData.path + "/audio"
+							+ InternData.counter + ".3gp";
+					InternData.counter++;
+					mediaRecorderDeutsch = AudioRecordTest.startRecording(
+							mediaRecorderDeutsch, audioPathDeutsch);
+					microDeutschButton.setImageResource(R.drawable.ic_microan);
+				} else {
+					AudioRecordTest.stopRecording(mediaRecorderDeutsch);
+					vokabel.setDeutscheAussprache(audioPathDeutsch);
+					microDeutschButton.setImageResource(R.drawable.ic_microaus);
+				}
+				startRecordingDeutsch = !startRecordingDeutsch;
+			}
+		});
 
 		lautsprecherPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -74,25 +90,29 @@ public class DetailActivity extends Activity {
 				if (startPlayingPersisch) {
 					mediaPlayerPersisch = AudioRecordTest.startPlaying(
 							mediaPlayerPersisch, audioPathPersisch);
-					lautsprecherPersischButton.setImageResource(R.drawable.ic_lautsprecheran);
+					lautsprecherPersischButton
+							.setImageResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
-					lautsprecherPersischButton.setImageResource(R.drawable.ic_lautsprecheraus);
+					lautsprecherPersischButton
+							.setImageResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingPersisch = !startPlayingPersisch;
 			}
 		});
-		
+
 		lautsprecherDeutschButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (startPlayingDeutsch) {
 					mediaPlayerDeutsch = AudioRecordTest.startPlaying(
 							mediaPlayerDeutsch, audioPathDeutsch);
-					lautsprecherDeutschButton.setImageResource(R.drawable.ic_lautsprecheran);
+					lautsprecherDeutschButton
+							.setImageResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerDeutsch);
-					lautsprecherDeutschButton.setImageResource(R.drawable.ic_lautsprecheraus);
+					lautsprecherDeutschButton
+							.setImageResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingDeutsch = !startPlayingDeutsch;
 			}
