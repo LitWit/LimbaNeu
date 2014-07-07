@@ -134,4 +134,23 @@ public class DetailActivity extends Activity {
 		this.startActivity(intent2);
 	}
 
+	@Override
+	public void onPause() {
+		super.onPause();
+		if (mediaRecorderDeutsch != null) {
+			mediaRecorderDeutsch.release();
+			mediaRecorderDeutsch = null;
+		}
+
+		if (mediaPlayerPersisch != null) {
+			mediaPlayerPersisch.release();
+			mediaPlayerPersisch = null;
+		}
+
+		if (mediaPlayerDeutsch != null) {
+			mediaPlayerDeutsch.release();
+			mediaPlayerDeutsch = null;
+		}
+	}
+
 }
