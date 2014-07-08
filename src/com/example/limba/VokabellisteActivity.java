@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -17,42 +16,35 @@ import android.widget.TextView;
 
 import com.example.limba.R;
 
-public class NeueWoerterActivity extends Activity {
+public class VokabellisteActivity extends Activity {
 
-	private static ListView neue_woerter_liste;
+	private static ListView vokabelliste;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.neue_woerter);
 
-		neue_woerter_liste = (ListView) findViewById(R.id.neue_woerter_liste);
+		vokabelliste = (ListView) findViewById(R.id.neue_woerter_liste);
 
 		List valueList = new ArrayList<TextView>();
-
-		for (Vokabel vokabel : InternData.liste) {
-			String test = vokabel.getPersischeVokabel();
+		
+		for (Vokabel vokabel : InternData.vokabelliste) {
 			valueList.add(vokabel.getPersischeVokabel());
 		}
 
 		ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
 				android.R.layout.simple_list_item_1, valueList);
 
-		neue_woerter_liste.setAdapter(adapter);
+		vokabelliste.setAdapter(adapter);
 
-		neue_woerter_liste.setOnItemClickListener(new OnItemClickListener() {
+		vokabelliste.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
-				startDetailActivity(position);
+				//startDetailActivity(position);
 			}
 		});
-	}
-
-	protected void startDetailActivity(int position) {
-		Intent intent = new Intent(this, DetailActivity.class);
-		InternData.vokabel = InternData.liste.get(position);
-		this.startActivity(intent);
 	}
 
 	@Override

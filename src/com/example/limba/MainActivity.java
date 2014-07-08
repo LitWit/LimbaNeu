@@ -1,7 +1,5 @@
 package com.example.limba;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +11,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import com.example.limba.R;
-import com.example.limba.NeueWoerterActivity;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -39,8 +36,8 @@ public class MainActivity extends Activity {
 		neue_woerter_button = (Button) findViewById(R.id.neue_woerter_button);
 		vokabelliste_button = (Button) findViewById(R.id.vokabelliste_button);
 		bewerten_button = (Button) findViewById(R.id.bewerten_button);
-		wort_hinzufuegen_button = (Button) findViewById(R.id.wort_hinzufuegen_button);		
-		
+		wort_hinzufuegen_button = (Button) findViewById(R.id.wort_hinzufuegen_button);
+
 		/**
 		 * neue W�rter
 		 */
@@ -86,9 +83,6 @@ public class MainActivity extends Activity {
 
 	protected void startVokabellisteActivity() {
 		// TODO
-		Intent intent = new Intent(this, Vokabel.class);
-		//Intent intent = new Intent(this, Vokabelliste.class);
-		this.startActivity(intent);
 		// Intent intent = new Intent(this, VokabellisteActivity.class);
 		// this.startActivity(intent);
 		
@@ -105,7 +99,7 @@ public class MainActivity extends Activity {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			}
+		}
 //		InputStreamReader isr = new InputStreamReader(fIn);
 
 		/* Prepare a char-Array that will
@@ -126,8 +120,8 @@ public class MainActivity extends Activity {
 
 	protected void startBewertenActivity() {
 		// TODO
-			 Intent intent = new Intent(this, AudioRecordTest.class);
-		//Intent intent = new Intent(this, Trainieren.class);
+		//	 Intent intent = new Intent(this, AudioRecordTest.class);
+		Intent intent = new Intent(this, Trainieren.class);
 		this.startActivity(intent);
 
 		// Intent intent = new Intent(this, BewertenActivity.class);

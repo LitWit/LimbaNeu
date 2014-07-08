@@ -23,7 +23,7 @@ public class WortHinzufuegenActivity extends Activity {
 	private static TextView persischesTextfeld;
 	private static TextView deutschesTextfeld;
 
-	private static Vokabel vokabel = new Vokabel();
+	private static Vokabel vokabel;
 	// Audio
 	private MediaRecorder mediaRecorderPersisch = null;
 	private MediaRecorder mediaRecorderDeutsch = null;
@@ -51,6 +51,8 @@ public class WortHinzufuegenActivity extends Activity {
 		lautsprecherDeutschButton = (ImageButton) findViewById(R.id.lautsprecherDeutschButton);
 		persischesTextfeld = (TextView) findViewById(R.id.persischesTextfeld);
 		deutschesTextfeld = (TextView) findViewById(R.id.deutschesTextfeld);
+		
+		vokabel = new Vokabel();
 
 		/**
 		 * Wort erstellen
