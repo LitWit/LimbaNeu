@@ -31,6 +31,7 @@ public class NeueWoerterActivity extends Activity {
 		List valueList = new ArrayList<TextView>();
 		Vokabel nextVokabel = new Vokabel();
 		nextVokabel.setNext(InternData.liste.getBegin());
+		
 
 		while (nextVokabel.getNext() != null) {
 			valueList.add(nextVokabel.getNext().getPersischeVokabel());
