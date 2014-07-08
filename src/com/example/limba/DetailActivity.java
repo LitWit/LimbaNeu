@@ -1,10 +1,17 @@
 package com.example.limba;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,9 +30,10 @@ public class DetailActivity extends Activity {
 	private static TextView persischesTextfeld;
 	private static EditText deutschesTextfeld;
 
+	Vokabel vokabel = new Vokabel();
+
 	// Audio
-	private MediaRecorder mediaRecorderPersisch = null;
-	private MediaRecorder mediaRecorderDeutsch = null; 
+	private MediaRecorder mediaRecorderDeutsch = null;
 	private MediaPlayer mediaPlayerPersisch = null;
 	private MediaPlayer mediaPlayerDeutsch = null;
 	boolean startRecordingPersisch = true;
@@ -54,19 +62,34 @@ public class DetailActivity extends Activity {
 
 		int position = (int) intent.getIntExtra("position", 0);
 
-		Vokabel vokabel = new Vokabel();
-		vokabel.setNext(InternData.liste.getBegin());
-		for (int i = 0; i < position; i++) {
-			vokabel.setNext(vokabel.getNext().getNext());
-		}
-		InternData.vokabel = vokabel.getNext();
-		audioPathPersisch = vokabel.getNext().getPersischeAussprache();
-		audioPathDeutsch = vokabel.getNext().getDeutscheAussprache();
+		vokabel = InternData.liste.get(position);
+		InternData.vokabel = vokabel;
+		audioPathPersisch = vokabel.getPersischeAussprache();
+		audioPathDeutsch = vokabel.getDeutscheAussprache();
 
 		((TextView) (findViewById(R.id.persischesTextfeld))).setText(vokabel
-				.getNext().getPersischeVokabel());
+				.getPersischeVokabel());
 		((TextView) (findViewById(R.id.deutschesTextfeld))).setText(vokabel
-				.getNext().getDeutscheVokabel());
+				.getDeutscheVokabel());
+
+		microDeutschButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (startRecordingDeutsch) {
+					audioPathDeutsch = InternData.path + "/audio"
+							+ InternData.counter + ".3gp";
+					InternData.counter++;
+					mediaRecorderDeutsch = AudioRecordTest.startRecording(
+							mediaRecorderDeutsch, audioPathDeutsch);
+					microDeutschButton.setImageResource(R.drawable.ic_microan);
+				} else {
+					AudioRecordTest.stopRecording(mediaRecorderDeutsch);
+					vokabel.setDeutscheAussprache(audioPathDeutsch);
+					microDeutschButton.setImageResource(R.drawable.ic_microaus);
+				}
+				startRecordingDeutsch = !startRecordingDeutsch;
+			}
+		});
 
 		lautsprecherPersischButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -74,25 +97,29 @@ public class DetailActivity extends Activity {
 				if (startPlayingPersisch) {
 					mediaPlayerPersisch = AudioRecordTest.startPlaying(
 							mediaPlayerPersisch, audioPathPersisch);
-					lautsprecherPersischButton.setImageResource(R.drawable.ic_lautsprecheran);
+					lautsprecherPersischButton
+							.setImageResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerPersisch);
-					lautsprecherPersischButton.setImageResource(R.drawable.ic_lautsprecheraus);
+					lautsprecherPersischButton
+							.setImageResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingPersisch = !startPlayingPersisch;
 			}
 		});
-		
+
 		lautsprecherDeutschButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (startPlayingDeutsch) {
 					mediaPlayerDeutsch = AudioRecordTest.startPlaying(
 							mediaPlayerDeutsch, audioPathDeutsch);
-					lautsprecherDeutschButton.setImageResource(R.drawable.ic_lautsprecheran);
+					lautsprecherDeutschButton
+							.setImageResource(R.drawable.ic_lautsprecheran);
 				} else {
 					AudioRecordTest.stopPlaying(mediaPlayerDeutsch);
-					lautsprecherDeutschButton.setImageResource(R.drawable.ic_lautsprecheraus);
+					lautsprecherDeutschButton
+							.setImageResource(R.drawable.ic_lautsprecheraus);
 				}
 				startPlayingDeutsch = !startPlayingDeutsch;
 			}
@@ -106,12 +133,66 @@ public class DetailActivity extends Activity {
 				startTrainierenActivity();
 			}
 		});
+		
+		
+		vokabellisteHinzufuegenButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				String  words = vokabel.getPersischeVokabel();
+				String readString = "";
+				try { 
+					/* We have to use the openFileOutput()-method
+					 * the ActivityContext provides, to
+					 * protect your file from others and
+					 * This is done for security-reasons.
+					 * We chose MODE_WORLD_READABLE, because
+					 *  we have nothing to hide in our file */             
+					FileOutputStream fOut = openFileOutput("saveWords.txt",
+							MODE_WORLD_READABLE);
+					OutputStreamWriter osw = new OutputStreamWriter(fOut); 
+
+					// Write the string to the file
+					osw.write(words);
+
+					/* ensure that everything is
+					 * really written out and close */
+					osw.flush();
+					osw.close();
+
+
+				} catch (IOException ioe) {
+					
+					ioe.printStackTrace();
+				}
+			}
+		});
 	}
 
 	protected void startTrainierenActivity() {
 		// TODO Auto-generated method stub
 		Intent intent2 = new Intent(this, Trainieren.class);
 		this.startActivity(intent2);
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		if (mediaRecorderDeutsch != null) {
+			mediaRecorderDeutsch.release();
+			mediaRecorderDeutsch = null;
+		}
+
+		if (mediaPlayerPersisch != null) {
+			mediaPlayerPersisch.release();
+			mediaPlayerPersisch = null;
+		}
+
+		if (mediaPlayerDeutsch != null) {
+			mediaPlayerDeutsch.release();
+			mediaPlayerDeutsch = null;
+		}
 	}
 
 }
