@@ -1,9 +1,20 @@
 package com.example.limba;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import com.example.limba.R;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -59,7 +70,7 @@ public class MainActivity extends Activity {
 		 * Wort hinzuf�gen
 		 */
 		wort_hinzufuegen_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
+			public void onClick(View v) {				 
 				startWortHinzufuegenActivity();
 			}
 		});
@@ -74,6 +85,37 @@ public class MainActivity extends Activity {
 		// TODO
 		// Intent intent = new Intent(this, VokabellisteActivity.class);
 		// this.startActivity(intent);
+		
+		//Reading the file back...
+
+		/* We have to use the openFileInput()-method
+		 * the ActivityContext provides.
+		 * Again for security reasons with
+		 * openFileInput(...) */
+
+		FileInputStream fIn;
+		try {
+			fIn = openFileInput("samplefile.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		InputStreamReader isr = new InputStreamReader(fIn);
+
+		/* Prepare a char-Array that will
+		 * hold the chars we read back in. */
+//		char[] inputBuffer = new char[wordTosave];
+
+		// Fill the Buffer with data from the file
+//		isr.read(inputBuffer);
+
+		// Transform the chars to a String
+//		readString = new String(inputBuffer);
+
+		// Check if we read back the same chars that we had written out
+//		boolean isTheSame = TESTSTRING.equals(readString);
+
+//		Log.i("File Reading stuff", "success = " + isTheSame);
 	}
 
 	protected void startBewertenActivity() {
