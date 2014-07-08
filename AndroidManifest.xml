@@ -45,6 +45,10 @@
             android:name=".Trainieren"
             android:label="@string/title_activity_trainieren" >
         </activity>
+        <activity
+            android:name=".VokabellisteActivity"
+            android:label="Vokabelliste" >
+        </activity>
     </application>
 
 </manifest>

@@ -31,7 +31,7 @@ public class VokabellisteActivity extends Activity {
 		
 		for (Vokabel vokabel : InternData.vokabelliste) {
 			valueList.add(vokabel.getPersischeVokabel());
-		} 
+		}
 
 		ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
 				android.R.layout.simple_list_item_1, valueList);

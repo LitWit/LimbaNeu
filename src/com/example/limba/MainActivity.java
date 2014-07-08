@@ -82,16 +82,15 @@ public class MainActivity extends Activity {
 	}
 
 	protected void startVokabellisteActivity() {
-		// TODO
-		// Intent intent = new Intent(this, VokabellisteActivity.class);
-		// this.startActivity(intent);
+		Intent intent2 = new Intent(this, VokabellisteActivity.class);
+		this.startActivity(intent2);
 		
 		//Reading the file back...
 
 		/* We have to use the openFileInput()-method
 		 * the ActivityContext provides.
 		 * Again for security reasons with
-		 * openFileInput(...) */
+		 * openFileInput(...) 
 
 		FileInputStream fIn;
 		try {
