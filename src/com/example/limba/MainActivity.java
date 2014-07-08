@@ -1,9 +1,7 @@
 package com.example.limba;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
-=======
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
->>>>>>> FETCH_HEAD
 
 import com.example.limba.R;
 import com.example.limba.NeueWoerterActivity;
@@ -89,10 +86,9 @@ public class MainActivity extends Activity {
 
 	protected void startVokabellisteActivity() {
 		// TODO
-<<<<<<< HEAD
-		Intent intent = new Intent(this, Vokabelliste.class);
+		Intent intent = new Intent(this, Vokabel.class);
+		//Intent intent = new Intent(this, Vokabelliste.class);
 		this.startActivity(intent);
-=======
 		// Intent intent = new Intent(this, VokabellisteActivity.class);
 		// this.startActivity(intent);
 		
@@ -109,7 +105,7 @@ public class MainActivity extends Activity {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+			}
 //		InputStreamReader isr = new InputStreamReader(fIn);
 
 		/* Prepare a char-Array that will
@@ -126,7 +122,6 @@ public class MainActivity extends Activity {
 //		boolean isTheSame = TESTSTRING.equals(readString);
 
 //		Log.i("File Reading stuff", "success = " + isTheSame);
->>>>>>> FETCH_HEAD
 	}
 
 	protected void startBewertenActivity() {

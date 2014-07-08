@@ -29,33 +29,33 @@ public class NeueWoerterActivity extends Activity {
 		neue_woerter_liste = (ListView) findViewById(R.id.neue_woerter_liste);
 
 		List valueList = new ArrayList<TextView>();
-<<<<<<< HEAD
 		Vokabel nextVokabel = new Vokabel();
-		nextVokabel.setNext(InternData.liste.getBegin());
-		
+		nextVokabel.setNext(InternData.liste.getFirst());
+		// es gibt keine .getBegin mehr
+		//nextVokabel.setNext(InternData.liste.getBegin());
+
 
 		while (nextVokabel.getNext() != null) {
 			valueList.add(nextVokabel.getNext().getPersischeVokabel());
 			nextVokabel.setNext(nextVokabel.getNext().getNext());
-=======
-		
-		for (Vokabel vokabel : InternData.liste) {
-			valueList.add(vokabel.getPersischeVokabel());
->>>>>>> FETCH_HEAD
-		}
 
-		ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
-				android.R.layout.simple_list_item_1, valueList);
-
-		neue_woerter_liste.setAdapter(adapter);
-
-		neue_woerter_liste.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1,
-					int position, long arg3) {
-				startDetailActivity(position);
+			for (Vokabel vokabel : InternData.liste) {
+				valueList.add(vokabel.getPersischeVokabel());
 			}
-		});
+
+			ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),
+					android.R.layout.simple_list_item_1, valueList);
+
+			neue_woerter_liste.setAdapter(adapter);
+
+			neue_woerter_liste.setOnItemClickListener(new OnItemClickListener() {
+				@Override
+				public void onItemClick(AdapterView<?> arg0, View arg1,
+						int position, long arg3) {
+					startDetailActivity(position);
+				}
+			});
+		}
 	}
 
 	protected void startDetailActivity(int position) {
