@@ -1,17 +1,10 @@
 package com.example.limba;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -131,41 +124,6 @@ public class DetailActivity extends Activity {
 		trainierenButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				startTrainierenActivity();
-			}
-		});
-		
-		
-		vokabellisteHinzufuegenButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				String  words = vokabel.getPersischeVokabel();
-				String readString = "";
-				try { 
-					/* We have to use the openFileOutput()-method
-					 * the ActivityContext provides, to
-					 * protect your file from others and
-					 * This is done for security-reasons.
-					 * We chose MODE_WORLD_READABLE, because
-					 *  we have nothing to hide in our file */             
-					FileOutputStream fOut = openFileOutput("saveWords.txt",
-							MODE_WORLD_READABLE);
-					OutputStreamWriter osw = new OutputStreamWriter(fOut); 
-
-					// Write the string to the file
-					osw.write(words);
-
-					/* ensure that everything is
-					 * really written out and close */
-					osw.flush();
-					osw.close();
-
-
-				} catch (IOException ioe) {
-					
-					ioe.printStackTrace();
-				}
 			}
 		});
 	}
